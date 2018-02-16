@@ -1,5 +1,6 @@
 <nav>
-  <h1><%= link_to "devit", root_path %></h1>
+  <%= image_tag("terminal") %>
+  <h1 id="logo"><%= link_to "devit", root_path %></h1>
   <ul>
     <% if user_signed_in? %>
       <li><%= link_to "#{current_user.email}", user_registration_path(current_user) %></li>

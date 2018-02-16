@@ -59,3 +59,7 @@ a {
   text-decoration: none;
   color: #111;
 }
+
+#logo {
+  padding-left: 10px;
+}
