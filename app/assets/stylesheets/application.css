@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+*, body {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #111;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+nav {
+  z-index: 6;
+  -webkit-box-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  height: 62px;
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #fff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  position: relative;
+  float: left;
+  padding: 0 20px 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
