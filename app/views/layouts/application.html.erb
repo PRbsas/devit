@@ -9,7 +9,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/nav' %>
-    <%= yield %>
+    <header>
+      <%= render 'layouts/nav' %>
+    </header>
+    <section class="wrapper">
+      <%= yield %>
+    </section>
   </body>
 </html>

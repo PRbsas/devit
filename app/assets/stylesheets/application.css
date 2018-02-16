@@ -63,3 +63,10 @@ a {
 #logo {
   padding-left: 10px;
 }
+
+.wrapper {
+  margin: auto;
+  max-width: 80%;
+  text-align: center;
+  padding-top: 100px;
+}
