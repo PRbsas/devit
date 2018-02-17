@@ -1,0 +1,24 @@
+#profile {
+  margin: auto;
+  max-width: 80%;
+  text-align: left;
+  padding: 0 20px 0 20px;
+  display: inline;
+  float: left;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+#profile h1 {
+  padding: 10px 0 0 30px;
+  font-size: 36px;
+  float: right;
+}
+
+#profile div {
+  padding-left: 180px;
+}
