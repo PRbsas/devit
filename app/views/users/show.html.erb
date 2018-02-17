@@ -1,0 +1,6 @@
+<%= @user.name %><br />
+<%= @user.email %><br />
+<%= @user.username %><br />
+<%= @user.bio %><br />
+<%= link_to 'GitHub Profile', @user.github_profile_url %><br />
+<%= image_tag "#{@user.avatar_url}" %>

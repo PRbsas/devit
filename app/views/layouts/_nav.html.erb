@@ -3,7 +3,7 @@
   <h1 id="logo"><%= link_to "devit", root_path %></h1>
   <ul>
     <% if user_signed_in? %>
-      <li><%= link_to "#{current_user.email}", user_registration_path(current_user) %></li>
+      <li><%= link_to "#{current_user.email}", user_path(current_user) %></li>
       <li><%= link_to "Communities", communities_path %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
     <% else %>

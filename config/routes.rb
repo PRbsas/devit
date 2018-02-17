@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'static#home'
 
   resource :communities
+  resources :users, only: %i[show]
 end

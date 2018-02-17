@@ -12,6 +12,10 @@ class User < ApplicationRecord
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
+        user.username = auth.info.nickname
+        user.bio = auth.extra.raw_info.bio
+        user.github_profile_url = auth.info.urls.GitHub
+        user.avatar_url = auth.info.image
     end
   end
 end
