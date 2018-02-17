@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20180217023612) do
   create_table "communities", force: :cascade do |t|
     t.string "title"
     t.text "short_description"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
