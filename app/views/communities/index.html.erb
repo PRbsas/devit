@@ -1,8 +1,14 @@
 <h1>Communities</h1>
 
-<% @communities.each do |community| %>
+<section id="list">
   <ul>
-    <li><%= link_to "#{community.title}", community %></li>
-    <li><%= community.short_description %></li>
+    <% @communities.each do |community| %>
+      <%= link_to community do %>
+        <li>
+          <h2><%= community.title %></h2>
+          <p><%= community.short_description %></p>
+        </li>
+      <% end %>
+    <% end %>
   </ul>
-<% end %>
+</section>
