@@ -11,6 +11,15 @@
   float: left;
 }
 
+#list h5 {
+  margin-top: 60px;
+  margin-left: 0;
+  padding: 0;
+  display: flex;
+  float: right;
+  color: #808080;
+}
+
 #list p {
   padding-top: 10px;
   margin: 0;

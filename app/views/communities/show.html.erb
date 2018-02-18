@@ -1,3 +1,9 @@
-<h1><%= current_user.username %></h1>
-<h2><%= @community.title %></h2>
-<p><%= @community.short_description %></p>
+<section id="list">
+  <h2><%= @community.title %></h2>
+  <% if  current_user.username %>
+    <h5>Created by <%= current_user.username %></h5>
+  <% else %>
+    <h5>Created by <%= current_user.email %></h5>
+  <% end %>
+  <p><%= @community.short_description %></p>
+</section>
