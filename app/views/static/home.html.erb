@@ -1,12 +1,1 @@
-<p id="notice"><%= notice %></p>
 <h1>The internet was built for communities</h1>
-
-<% @communities.each do |community| %>
-  <div>
-    <li><%= community.title %></li>
-    <li><%= community.description %></li>
-    <li><%= link_to 'Show', community %></li>
-    <li><%= link_to 'Edit', edit_community_path(community) %></li>
-    <li><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  </div>
-<% end %>

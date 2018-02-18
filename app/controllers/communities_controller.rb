@@ -1,18 +1,22 @@
 class CommunitiesController < ApplicationController
-  before_action :set_community, only: %i[ show, edit, update, destroy ]
+  before_action :set_community, only: [ :show, :edit, :update, :destroy ]
+
+  def index
+    @communities = Community.all
+  end
 
   def show
   end
 
   def new
-    @community = Community.new
+    @community = current_user.communities.build
   end
 
   def edit
   end
 
   def create
-    @community = Community.new(community_params)
+    @community = current_user.communities.build(community_params)
 
     respond_to do |format|
       if @community.save
