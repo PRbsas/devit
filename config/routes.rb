@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :communities
   resources :members
-  resources :users, only: %i[ show ]  
+  resources :users, only: %i[ index show ]  
 end

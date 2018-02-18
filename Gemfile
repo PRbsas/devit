@@ -33,7 +33,7 @@ gem 'devise'
 gem 'omniauth-github'
 
 #gem 'friendly_id', '~> 5.1.0'
-
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

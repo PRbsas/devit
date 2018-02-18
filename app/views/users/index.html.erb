@@ -1,0 +1,12 @@
+<% @users.each do |user| %>
+<section id="profile">
+  <%= image_tag "#{user.avatar_url}", class: "avatar" %>
+  <h1><%= user.name %></h1>
+  <div>
+    <p>username: <%= user.username %></p>
+    <p>email: <%= user.email %></p>
+    <p>bio: <%= user.bio %></p>
+    <p><strong><%= link_to 'GitHub Profile', user.github_profile_url %></strong></p>
+  </div>
+</section>
+<% end %>
