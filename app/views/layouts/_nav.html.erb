@@ -3,8 +3,13 @@
   <h1 id="logo"><%= link_to "devit", root_path %></h1>
   <ul>
     <% if user_signed_in? %>
-      <li><%= image_tag "#{current_user.avatar_url}", class: "avatar-small" %></li>
-      <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
+      <% if current_user.avatar_url && current_user.username %>
+        <li><%= image_tag "#{current_user.avatar_url}", class: "avatar-small" %></li>
+        <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
+      <% else %>
+        <li><%= image_tag "https://github.com/identicons/#{SecureRandom.hex}.png", class: "avatar-small" %></li>
+        <li><%= link_to "#{current_user.email}", user_path(current_user) %></li>
+      <% end %>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <li><%= link_to "Communities", communities_path %></li>
     <% else %>
