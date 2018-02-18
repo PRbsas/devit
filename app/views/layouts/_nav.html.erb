@@ -3,9 +3,10 @@
   <h1 id="logo"><%= link_to "devit", root_path %></h1>
   <ul>
     <% if user_signed_in? %>
-      <li><%= link_to "#{current_user.email}", user_path(current_user) %></li>
-      <li><%= link_to "Communities", communities_path %></li>
+      <li><%= image_tag "#{current_user.avatar_url}", class: "avatar-small" %></li>
+      <li><%= link_to "#{current_user.username}", user_path(current_user) %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to "Communities", communities_path %></li>
     <% else %>
       <li><%= link_to "Join devit", new_user_registration_path %></li>
       <li><%= link_to "Log in", new_user_session_path %></li>
