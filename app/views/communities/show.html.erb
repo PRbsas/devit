@@ -5,18 +5,20 @@
   <% else %>
     <h5>Created by <%= current_user.email %></h5>
   <% end %>
-  <p><%= @community.short_description %></p>
+  <p class="description"><%= @community.short_description %></p>
   <h5><%= @community.posts.size %> posts.</h5>
 </section>
 
 <section id="list-posts">
   <ul>
     <% @community.posts.each do |post| %>
-      <%= link_to community_post_path(post) do %>
+      <%= link_to community_post_path(@community, post) do %>
         <li>
           <h2><%= post.title %></h2>
+          <p class="time-ago">submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></p>
         </li>
       <% end %>
+
     <% end %>
   </ul>
 </section>

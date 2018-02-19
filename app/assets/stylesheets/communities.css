@@ -17,10 +17,10 @@
   padding: 0;
   display: flex;
   float: right;
-  color: #808080;
+  font-weight: normal;
 }
 
-#list p {
+.description {
   padding-top: 10px;
   margin: 0;
   padding: 0;
@@ -51,4 +51,11 @@
 #list li:hover {
   background: #f6f6f6;
   cursor: pointer;
+}
+
+.time-ago {
+  display: flex;
+  float: right;
+  padding-top: 30px;
+  text-align: justify;
 }

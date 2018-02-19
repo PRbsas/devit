@@ -6,7 +6,8 @@
       <%= link_to community do %>
         <li>
           <h2><%= community.title %></h2>
-          <p><%= community.short_description %></p>
+          <p class="description"><%= community.short_description %></p>
+          <p class="time-ago">created <%= time_ago_in_words(community.created_at) %> ago</p>
         </li>
       <% end %>
     <% end %>
