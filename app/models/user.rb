@@ -21,4 +21,12 @@ class User < ApplicationRecord
         user.avatar_url = auth.info.image
     end
   end
+
+  def show_name
+    self.username || self.name || self.email
+  end
+
+  def show_avatar
+    self.avatar_url ? self.avatar_url : "https://github.com/identicons/#{SecureRandom.hex}.png"
+  end
 end
