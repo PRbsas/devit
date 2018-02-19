@@ -1,9 +1,16 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  def new
+    @post = Post.new
+  end
+
+  def show
+  end
+
   def create
     @community = Community.find(params[:community_id])
-    @post = @community.posts.new(post_params)
+    @post = @community.posts.create(post_params)
     @post.user = current_user
 
     respond_to do |format|
@@ -31,6 +38,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:link_id, :body, :user_id, :community_id)
+      params.require(:post).permit(:title, :content, :user_id, :community_id)
     end
 end
