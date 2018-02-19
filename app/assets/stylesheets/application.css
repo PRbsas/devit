@@ -84,33 +84,36 @@ a {
   padding-top: 100px;
 }
 
+input:focus, textarea:focus {
+  outline-color: #79FFE1;
+}
+
 .actions input, .actions a, .field input, .field textarea {
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    width: 180px;
-    height: 40px;
-    border: 2px solid #000;
-    font-size: 15px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    cursor: pointer;
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    position: relative;
-    overflow: hidden;
-    border-radius: 5px;
-    margin-top: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 180px;
+  height: 40px;
+  border: 2px solid #000;
+  font-size: 15px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .field input {
@@ -157,4 +160,12 @@ footer {
   width: 100%;
   margin-top: 100px;
   text-align: center;
+}
+
+.notice {
+  color: #1BBD02;
+}
+
+.alert {
+  color: #E60000;
 }
