@@ -142,3 +142,19 @@ input#user_name, input#user_email, input#user_password, input#user_password_conf
 h4 {
   color: #808080;
 }
+
+footer {
+  left: 0;
+  bottom: 0;
+  z-index: 6;
+  -webkit-box-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  position: relative;
+  display: -webkit-box;
+  display: inline-block;
+  height: 30px;
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+}

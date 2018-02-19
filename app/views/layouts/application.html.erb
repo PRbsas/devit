@@ -12,10 +12,11 @@
     <header>
       <%= render 'layouts/nav' %>
     </header>
-    <section class="wrapper">
+    <div class="wrapper">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-    </section>
+    </div>
+    <%= render 'layouts/footer' unless current_page?(root_path) %>
   </body>
 </html>
