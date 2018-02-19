@@ -84,7 +84,7 @@ a {
   padding-top: 100px;
 }
 
-.actions input, .actions a {
+.actions input, .actions a, .field input, .field textarea {
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -111,6 +111,15 @@ a {
     overflow: hidden;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.field input {
+  width: 40%;
+}
+
+.field textarea {
+  width: 40%;
+  height: 200px;
 }
 
 .actions span {

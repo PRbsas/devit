@@ -6,7 +6,8 @@
     <h5>Created by <%= current_user.email %></h5>
   <% end %>
   <p class="description"><%= @community.short_description %></p>
-  <h5><%= @community.posts.size %> posts.</h5>
+  <h5><%= pluralize(@community.posts.size, 'post') %></h5>
+
 </section>
 
 <section id="list-posts">
