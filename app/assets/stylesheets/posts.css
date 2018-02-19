@@ -41,3 +41,12 @@
   background: #f6f6f6;
   cursor: pointer;
 }
+
+.add-link {
+  margin: 50px 0 0 0;
+  width: 100%;
+  display: flex;
+  float: left;
+  padding-top: 30px;
+  text-align: justify;
+}

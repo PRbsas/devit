@@ -7,7 +7,6 @@
   <% end %>
   <p class="description"><%= @community.short_description %></p>
   <h5><%= pluralize(@community.posts.size, 'post') %></h5>
-
 </section>
 
 <section id="list-posts">
@@ -16,10 +15,14 @@
       <%= link_to community_post_path(@community, post) do %>
         <li>
           <h2><%= post.title %></h2>
-          <p class="time-ago">submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></p>
+          <p>submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></p>
         </li>
       <% end %>
-
+    <% end %>
+    <%= link_to new_community_post_path(@community) do %>
+      <div class="add-link">
+        <p ><%= image_tag("plus") %>  Post</p>
+      </div>
     <% end %>
   </ul>
 </section>
