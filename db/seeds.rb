@@ -26,3 +26,5 @@
 end
 
 Community.create(title: 'JavaScript', short_description: 'JavaScript (JS) is a lightweight interpreted or JIT-compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages', user_id: 1)
+
+Post.create(title: 'Answers to common questions about render props', user_id: 11, community_id: 1)

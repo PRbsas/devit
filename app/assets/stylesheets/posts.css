@@ -1,0 +1,36 @@
+#list-posts {
+  width: 80%;
+  margin: auto;
+}
+
+#list-posts h2 {
+  padding-top: 10px;
+  margin-left: 0;
+  padding: 0;
+  display: flex;
+  float: left;
+  font-size: 20px;
+}
+
+#list-posts ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#list-posts li {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+#list-posts li:hover {
+  background: #f6f6f6;
+  cursor: pointer;
+}
