@@ -20,6 +20,12 @@
   )
 end
 
-Community.create(title: 'JavaScript', short_description: 'JavaScript (JS) is a lightweight interpreted or JIT-compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages', user_id: 1)
+Community.create([
+  {title: 'JavaScript', short_description: 'JavaScript (JS) is a lightweight interpreted or JIT-compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages.', user_id: 1},
+  {title: 'Ruby', short_description: 'A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.', user_id: 2},
+  {title: 'Ruby on Rails', short_description: 'Learning to build a modern web application is daunting. Ruby on Rails makes it much easier and more fun. It includes everything you need to build fantastic applications, and you can learn it with the support of our large, friendly community.', user_id: 1},
+])
 
-Post.create(title: 'Answers to common questions about render props', user_id: 11, community_id: 1)
+Post.create([
+  {title: 'Newbies Introduction to Ruby on Rails', content: 'Note: This tutorial is intended to newbies only who want to kick-start web development with Ruby on Rails. I will just share links to different resources and give tips based on my experience which may help you starting development with Ruby on Rails.', link: 'https://dev.to/alihaider907/newbies-introduction-to-ruby-on-rails-4be', user_id: 3, community_id: 3}
+])
