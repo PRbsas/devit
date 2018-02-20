@@ -1,5 +1,6 @@
 <section id="list">
   <h2><%= link_to "#{@post.title}", @post.link, target: :_blank %></h2>
+  <p class="description" id="link"><%= link_to "#{@post.link}", @post.link, target: :_blank %></p>
   <h5>Created by <%= current_user.show_name %></h5>
   <p class="description"><%= @post.content %></p>
   <h5><%= pluralize(@post.comments.size, 'comment') %></h5>
@@ -16,7 +17,7 @@
   </ul>
 </section>
 
-<section id="list-posts" class="margin-top">
+<section id="list-posts" class="comments">
   <%= form_for [@post, Comment.new] do |f| %>
     <%= f.text_area :content, placeholder: 'Comment here...' %><br>
     <%= f.hidden_field :post_id, value: @post.id %>

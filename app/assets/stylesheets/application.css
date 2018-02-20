@@ -109,7 +109,6 @@ input:focus, textarea:focus {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -118,6 +117,10 @@ input:focus, textarea:focus {
   overflow: hidden;
   border-radius: 5px;
   margin-top: 10px;
+}
+
+.actions input, .actions a {
+  cursor: pointer;
 }
 
 .field input {

@@ -50,3 +50,9 @@
   padding-top: 30px;
   text-align: justify;
 }
+
+#link {
+  text-decoration: underline;
+  cursor: pointer;
+  width: 100%;
+}
