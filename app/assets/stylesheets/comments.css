@@ -1,0 +1,38 @@
+#list-posts h6 {
+  padding-top: 10px;
+  margin-left: 0;
+  padding: 0;
+  display: flex;
+  float: left;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+#new_comment textarea {
+  -webkit-appearance: none;
+  -moz-appearance none;:
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  width: 80%;
+  height: 80px;
+  font-size: 15px;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  float: left;
+  border: 1px solid #ccc;
+}
+
+#new_comment input {
+  -webkit-appearance: none;
+  -moz-appearance none;:
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  display: flex;
+  float: right;
+  border: none;
+  font-size: 15px;
+  padding-top: 35px;
+}

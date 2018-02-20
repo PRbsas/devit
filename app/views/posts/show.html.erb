@@ -1,2 +1,26 @@
-<%= link_to "#{@post.title}", @post.link, target: :_blank %><br>
-<%= @post.content %>
+<section id="list">
+  <h2><%= link_to "#{@post.title}", @post.link, target: :_blank %></h2>
+  <h5>Created by <%= current_user.show_name %></h5>
+  <p class="description"><%= @post.content %></p>
+  <h5><%= pluralize(@post.comments.size, 'comment') %></h5>
+</section>
+
+<section id="list-posts">
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li>
+        <h6><%= comment.content %></h6>
+        <p>submitted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.show_name %></p>
+      </li>
+    <% end %>
+  </ul>
+  <ul>
+    <li>
+      <%= form_for [@post, Comment.new] do |f| %>
+        <%= f.text_area :content %><br>
+        <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.submit %>
+      <% end %>
+    </li>
+  </ul>
+</section>

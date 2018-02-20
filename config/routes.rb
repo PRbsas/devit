@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :members
-  resources :users, only: %i[ index show ]
+  resources :posts do
+    resources :comments, shallow: true
+  end
+
+  resources :users, only: [:index, :show]
 end
