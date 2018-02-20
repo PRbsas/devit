@@ -35,6 +35,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+textarea {
+  resize: none;
+}
+
 nav {
   z-index: 6;
   -webkit-box-align: center;

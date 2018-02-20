@@ -14,13 +14,12 @@
       </li>
     <% end %>
   </ul>
-  <ul>
-    <li>
-      <%= form_for [@post, Comment.new] do |f| %>
-        <%= f.text_area :content %><br>
-        <%= f.hidden_field :post_id, value: @post.id %>
-        <%= f.submit %>
-      <% end %>
-    </li>
-  </ul>
+</section>
+
+<section id="list-posts" class="margin-top">
+  <%= form_for [@post, Comment.new] do |f| %>
+    <%= f.text_area :content, placeholder: 'Comment here...' %><br>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.submit "add" %>
+  <% end %>
 </section>
