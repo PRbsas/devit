@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     resources :comments, shallow: true
   end
   resources :tags
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
 end

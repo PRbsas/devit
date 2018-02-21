@@ -23,3 +23,34 @@
 #profile div {
   padding-left: 180px;
 }
+
+#user-form div {
+  font-size: 15px;
+  margin: auto;
+}
+
+#user-form input, #edit-user input {
+  font-size: 15px;
+  width: 400px;
+  height: 40px;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+#user-form textarea {
+  font-size: 15px;
+  width: 400px;
+  height: 80px;
+  border: 2px solid #808080;
+  border-radius: 5px;
+
+}
+
+#user-form label {
+  font-size: 15px;
+  margin-bottom: 0;
+  align-items: baseline;
+  margin-top: 50px;
+}

@@ -1,0 +1,28 @@
+<%= form_for @user do |f| %>
+<%= render partial: 'shared/error_messages', locals: { object: @user } %>
+  <section id="user-form">
+    <div class="field">
+      <%= f.label :name, 'Name' %><br>
+      <%= f.text_field :name, id: 'edit-user' %>
+    </div>
+    <div class="field">
+      <%= f.label :username, 'Username' %><br>
+      <%= f.text_field :username %>
+    </div>
+    <div class="field">
+      <%= f.label :avatar_url, 'Avatar URL' %><br>
+      <%= f.text_field :avatar_url %>
+    </div>
+    <div class="field">
+      <%= f.label :bio, 'Tell us about you' %><br>
+      <%= f.text_area :bio %>
+    </div>
+    <div class="field">
+      <%= f.label :github_profile_url, 'GitHub URL' %><br>
+      <%= f.text_field :github_profile_url %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </section>
+<% end %>

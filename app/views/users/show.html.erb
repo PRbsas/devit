@@ -1,14 +1,10 @@
 <section id="profile">
-  <% if @user.avatar_url %>
-    <%= image_tag "#{@user.avatar_url}", class: "avatar" %>
-  <% else %>
-    <%= image_tag "https://github.com/identicons/#{SecureRandom.hex}.png", class: "avatar" %>
-  <% end %>
+  <%= image_tag "#{@user.show_avatar}", class: "avatar" %>
   <h1><%= @user.name %></h1>
   <div>
-    <p>username: <%= @user.username %></p>
-    <p>email: <%= @user.email %></p>
-    <p>bio: <%= @user.bio %></p>
-    <p><strong><%= link_to 'GitHub Profile', @user.github_profile_url %></strong></p>
+    <p><strong>username:</strong> <%= @user.username %></p>
+    <p><strong>email:</strong> <%= @user.email %></p>
+    <p><strong>bio:</strong> <%= @user.bio %></p>
+    <p><strong><%= link_to 'GitHub Profile', @user.github_profile_url, target: :_blank  %></strong></p>
   </div>
 </section>
