@@ -56,3 +56,16 @@
   cursor: pointer;
   width: 100%;
 }
+
+.engagement {
+  margin-top: 60px;
+  margin-left: 0;
+  padding: 0;
+  display: flex;
+  float: right;
+  font-weight: normal;
+}
+
+.engagement img {
+  padding: 0 5px 0 5px;
+}

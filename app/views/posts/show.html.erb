@@ -3,7 +3,17 @@
   <p class="description" id="link"><%= link_to "#{@post.link}", @post.link, target: :_blank %></p>
   <h5>Created by <%= current_user.show_name %></h5>
   <p class="description"><%= @post.content %></p>
-  <h5><%= pluralize(@post.comments.size, 'comment') %></h5>
+
+  <%= link_to like_community_post_path(@post), method: :put do %>
+     <div class="engagement">
+       <%= image_tag("heart") %>
+       <p><%= @post.get_upvotes.size %> </p>
+     </div>
+  <% end %>
+  <div class="engagement">
+    <%= image_tag("message-square") %>
+    <p><%= @post.comments.size %> </p>
+  </div>
 </section>
 
 <section id="list-posts">

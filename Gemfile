@@ -34,6 +34,7 @@ gem 'omniauth-github'
 
 gem 'friendly_id', '~> 5.1.0'
 gem 'faker'
+gem 'acts_as_votable', '~> 0.11.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root 'static#home'
 
   resources :communities do
-    resources :posts
+    resources :posts do
+      member do
+        put 'like', to: 'posts#upvote'
+      end
+    end
   end
 
   resources :posts do
