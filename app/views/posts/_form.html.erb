@@ -1,16 +1,5 @@
 <%= form_for @post, url: { controller: "posts", action: "create" } do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= render partial: 'shared/error_messages', locals: { object: @post } %>
   <div class="field">
     <%= f.text_field :title, placeholder: 'Post Title' %>
   </div>

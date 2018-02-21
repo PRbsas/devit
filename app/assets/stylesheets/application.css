@@ -200,7 +200,7 @@ footer {
   color: #1BBD02;
 }
 
-.alert {
+.alert, #error_explanation {
   color: #E60000;
 }
 
