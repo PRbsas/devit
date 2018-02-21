@@ -1,0 +1,9 @@
+#list-posts .tags {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 2px 5px 3px;
+  border-radius: 2px;
+  background: #d6d9e0;
+  color: #606570;
+}

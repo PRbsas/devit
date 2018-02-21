@@ -12,16 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, placeholder: 'Post Title' %>
   </div>
   <div class="field">
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
+    <%= f.text_field :link, placeholder: 'Post Link' %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, placeholder: 'Post content' %>
+  </div>
+  <div class="field">
+    <%= f.fields_for :tags, @post.tags.build do |tag_fields| %>
+      <%= tag_fields.text_field :name, placeholder: 'Add a Tag' %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

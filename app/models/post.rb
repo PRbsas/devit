@@ -4,6 +4,9 @@ class Post < ApplicationRecord
 
   has_many :comments
 
+  has_many :tags
+  accepts_nested_attributes_for :tags, reject_if: :all_blank
+
   validates :title, presence: true
   validates :title, uniqueness: true
   validates :link, presence: true

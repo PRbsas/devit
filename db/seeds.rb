@@ -49,3 +49,18 @@ Post.create([
   { title: 'Git standup, how did I ever live without you?', content: 'I am sure you have been preparing for a meeting where a team typically discusses what they did yesterday and what they are planning to do today. These are often called "standup meetings". If you are anything like me, the "remember what you did yesterday" part does not always go as smoothly as it could. Panic typically ensues and I would find myself putting in more work than I should need to in order to simply remember the day before.', link: 'https://dev.to/ben/git-standup-how-did-i-ever-live-without-you', user_id: 4, community_id: 4 },
   { title: 'Closure? I Hardly Know Her!', content: 'I have learned about closures a few different times, and each time, I have come away feeling like I get it, but I do not necessarily understand why people make such a big deal out of them. Yeah, hooray, you get functions that can persist their data! I have seen people post things like, "If you are not using closures, you are really missing out." I think I have finally figured out why people are so excited, and why I was confused. This post will explain what closures are, when you might want to use them, and why it took me so long to get why they are special.', link: 'https://dev.to/rpalo/closure-i-hardly-know-her--1h40', user_id: 6, community_id: 9 }
 ])
+
+Comment.create([
+  { content: 'Nice writeup. Ruby is the perfect language for these sorts of projects.', post_id: 8, user_id: 4 },
+  { content: 'love the idea of trestle, I feel like ActiveAdmin it is a bit lacking in the department of responsiveness... I have used jquery-fileupload and its satellite projects like JavaScript Load Image and JavaScript-Canvas-to-Blob and I can say they are amazing!', post_id: 10, user_id: 3 }
+
+])
+
+Tag.create!([
+  { name: '#beginners', post_id: 4 },
+  { name: '#discuss', post_id: 5 },
+  { name: '#career', post_id: 1 },
+  { name: '#productivity', post_id: 7 },
+  { name: '#explainlikeimfive', post_id: 8 },
+  { name: '#learning', post_id: 4 }
+])

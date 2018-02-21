@@ -88,7 +88,7 @@ a {
   padding-top: 100px;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
   outline-color: #79FFE1;
 }
 
@@ -130,6 +130,33 @@ input:focus, textarea:focus {
 .field textarea {
   width: 40%;
   height: 200px;
+}
+
+select {
+  width: 40%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 40px;
+  border: 2px solid #000;
+  font-size: 15px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .actions span {
