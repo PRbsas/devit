@@ -30,8 +30,10 @@ class User < ApplicationRecord
 
   def flairs_attributes=(flairs_attributes)
     flairs_attributes.values.each do |flairs_attribute|
-      flair = Flair.find_or_create_by(name: flairs_attribute['name']) unless flairs_attribute['name'] == nil
-      self.user_flairs.build(flair: flair, experience_level: flairs_attribute['user_flairs']['experience_level'])
+      if flairs_attribute['name'] != nil
+        flair = Flair.find_or_create_by(name: flairs_attribute['name'])
+        self.user_flairs.build(flair: flair, experience_level: flairs_attribute['user_flairs']['experience_level'])
+      end
     end
   end
 

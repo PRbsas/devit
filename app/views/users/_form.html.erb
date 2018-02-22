@@ -26,7 +26,7 @@
       <%= f.fields_for :flairs, @user.flairs.build do |flair_fields| %>
         <%= flair_fields.text_field :name, placeholder: 'Language to display' %>
         <%= flair_fields.fields_for :user_flairs do |user_flairs_fields| %>
-          <%= user_flairs_fields.text_field :experience_level, placeholder: 'Experience Level' %>
+          <%= user_flairs_fields.collection_select :experience_level, UserFlair.all, :experience_level, :experience_level, include_blank: true, prompt: 'Experience Level' %>
         <% end %>
       <% end %>
     </div>

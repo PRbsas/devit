@@ -7,7 +7,12 @@
         <li>
           <h2><%= community.title %></h2>
           <p class="description"><%= community.short_description %></p>
-          <p class="time-ago">created <%= time_ago_in_words(community.created_at) %> ago by <%= link_to "#{community.poster.show_name}", user_path(community.poster), class: "user-tag" %></p>
+          <p class="time-ago">
+            created <%= time_ago_in_words(community.created_at) %> ago by <%= link_to "#{community.poster.show_name}", user_path(community.poster), class: "user-tag" %>
+            <% if  community.poster.flairs.last != nil %>
+              <%= link_to "#{community.poster.flairs.last.name}", user_path(community.poster), class: "user-tag" %>
+            <% end %>
+            </p>      
         </li>
       <% end %>
     <% end %>

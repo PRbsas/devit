@@ -56,11 +56,33 @@ Comment.create([
 
 ])
 
-Tag.create!([
+Tag.create([
   { name: '#beginners', post_id: 4 },
   { name: '#discuss', post_id: 5 },
   { name: '#career', post_id: 1 },
   { name: '#productivity', post_id: 7 },
   { name: '#explainlikeimfive', post_id: 8 },
   { name: '#learning', post_id: 4 }
+])
+
+Flair.create([
+  { name: '#JavaScript' },
+  { name: '#Ruby' },
+  { name: '#Ruby on Rails' },
+  { name: '#React' },
+  { name: '#Redux' },
+  { name: '#Elixir' },
+  { name: '#Golang' },
+  { name: '#Filemaker' },
+  { name: '#Swift' },
+  { name: '#Java' },
+  { name: '#C++' },
+  { name: '#Python' }
+])
+
+UserFlair.create([
+  { experience_level: '#ninja', user_id: 1, flair_id: 1 },
+  { experience_level: '#master', user_id: 2, flair_id: 2 },
+  { experience_level: '#always-learning', user_id: 6, flair_id: 3 },
+  { experience_level: '#beginner', user_id: 10, flair_id: 6 }
 ])
