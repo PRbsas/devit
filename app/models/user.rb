@@ -13,6 +13,9 @@ class User < ApplicationRecord
 
   has_many :comments
 
+  has_many :user_flairs
+  has_many :flairs, through: :user_flairs
+
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email
@@ -22,6 +25,13 @@ class User < ApplicationRecord
         user.bio = auth.extra.raw_info.bio
         user.github_profile_url = auth.info.urls.GitHub
         user.avatar_url = auth.info.image
+    end
+  end
+
+  def flairs_attributes=(flairs_attributes)
+    flairs_attributes.values.each do |flairs_attribute|
+      flair = Flair.find_or_create_by(name: flairs_attribute['name']) unless flairs_attribute['name'] == nil
+      self.user_flairs.build(flair: flair, experience_level: flairs_attribute['user_flairs']['experience_level'])
     end
   end
 

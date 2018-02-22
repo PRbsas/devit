@@ -21,6 +21,15 @@
       <%= f.label :github_profile_url, 'GitHub URL' %><br>
       <%= f.text_field :github_profile_url %>
     </div>
+    <div class="field flairs">
+      <%= f.label :flairs, 'Choose language/framework to display, set your exp-level' %><br>
+      <%= f.fields_for :flairs, @user.flairs.build do |flair_fields| %>
+        <%= flair_fields.text_field :name, placeholder: 'Language to display' %>
+        <%= flair_fields.fields_for :user_flairs do |user_flairs_fields| %>
+          <%= user_flairs_fields.text_field :experience_level, placeholder: 'Experience Level' %>
+        <% end %>
+      <% end %>
+    </div>
     <div class="actions">
       <%= f.submit %>
     </div>

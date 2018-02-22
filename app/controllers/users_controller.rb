@@ -36,6 +36,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :name, :username, :bio, :github_profile_url, :avatar_url)
+      params.require(:user).permit(:email, :name, :username, :bio, :github_profile_url, :avatar_url, flairs_attributes: [:id, :name, user_flairs: [:experience_level]])
     end
 end

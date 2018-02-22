@@ -64,3 +64,8 @@
   background: #79FFE1;
   color: #000;
 }
+
+#user-form .flairs input {
+  width: 198px;
+  display: inline;
+}
