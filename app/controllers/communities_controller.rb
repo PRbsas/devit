@@ -2,7 +2,7 @@ class CommunitiesController < ApplicationController
   before_action :set_community, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @communities = Community.all
+    @communities = Community.by_created_at
   end
 
   def show

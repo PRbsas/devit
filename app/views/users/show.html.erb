@@ -1,3 +1,7 @@
+<% if current_user.id == @user.id%>
+  <p id="nav-button"><%= link_to 'Edit', edit_user_path(@user) %></p>
+<% end %>
+
 <section id="profile">
   <%= image_tag "#{@user.show_avatar}", class: "avatar" %>
   <h1><%= @user.name %></h1>

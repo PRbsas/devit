@@ -1,9 +1,9 @@
-<p id="back"><%= link_to 'Back', community_path(@post.community) %></p>
+<p id="nav-button"><%= link_to 'Back', community_path(@post.community) %></p>
 
 <section id="list">
   <h2><%= link_to "#{@post.title}", @post.link, target: :_blank %></h2>
   <p class="description" id="link"><%= link_to "#{@post.link}", @post.link, target: :_blank %></p>
-  <h5>Created by <%= current_user.show_name %></h5>
+  <h5>Created by <%= link_to "#{@post.user.show_name}", user_path(@post.user), class: "user-tag" %></h5>
   <p class="description"><%= @post.content %></p>
 
   <%= link_to like_community_post_path(@post), method: :put do %>
@@ -23,7 +23,7 @@
     <% @post.comments.each do |comment| %>
       <li>
         <h6><%= comment.content %></h6>
-        <p>submitted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.show_name %></p>
+        <p>submitted <%= time_ago_in_words(comment.created_at) %> ago by <%= link_to "#{comment.user.show_name}", user_path(comment.user), class: "user-tag" %></p>
       </li>
     <% end %>
   </ul>

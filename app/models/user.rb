@@ -32,4 +32,8 @@ class User < ApplicationRecord
   def show_avatar
     self.avatar_url ? self.avatar_url : "https://github.com/identicons/#{SecureRandom.hex}.png"
   end
+
+  def self.by_sign_in
+    order('last_sign_in_at DESC')
+  end
 end

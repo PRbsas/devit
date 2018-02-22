@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :community
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   has_many :tags
   accepts_nested_attributes_for :tags, reject_if: :all_blank
