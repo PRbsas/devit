@@ -42,10 +42,13 @@ class CommunitiesController < ApplicationController
   end
 
   def destroy
-    @community.destroy
-    respond_to do |format|
-      format.html { redirect_to communities_url, notice: 'Community was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.id == @community.user_id
+      @community.destroy
+      
+      respond_to do |format|
+        format.html { redirect_to communities_url, notice: 'Community was successfully deleted.' }
+        format.json { head :no_content }
+      end
     end
   end
 

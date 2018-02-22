@@ -1,5 +1,9 @@
 <p id="nav-button"><%= link_to 'Back', communities_path %></p>
 
+<% if  current_user.id == @community.user_id %>
+  <p id="nav-button"><%= link_to 'Delete', @community, method: :delete %></p>
+<% end %>
+
 <section id="list">
   <h2><%= @community.title %></h2>
   <h5>Created by <%= link_to "#{@community.poster.show_name}", user_path(@community.poster), class: "user-tag" %></h5>

@@ -32,7 +32,11 @@ class PostsController < ApplicationController
   def destroy
     if current_user.id == @post.user_id
       @post.destroy
-      redirect_to community_path(@post.community)
+
+      respond_to do |format|
+        format.html { redirect_to community_path(@post.community), notice: 'Post was successfully deleted.' }
+        format.json { head :no_content }
+      end
     end
   end
 
