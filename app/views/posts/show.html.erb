@@ -1,5 +1,9 @@
 <p id="nav-button"><%= link_to 'Back', community_path(@post.community) %></p>
 
+<% if  current_user.id == @post.user_id %>
+  <p id="nav-button"><%= link_to 'Delete', [@post.community, @post], method: :delete %></p>
+<% end %>
+
 <section id="list">
   <h2><%= link_to "#{@post.title}", @post.link, target: :_blank %></h2>
   <p class="description" id="link"><%= link_to "#{@post.link}", @post.link, target: :_blank %></p>

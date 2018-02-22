@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-  
+
   def recent
     @recent_posts = Post.recent
     render :recent
@@ -30,10 +30,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to :back, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.id == @post.user_id
+      @post.destroy
+      redirect_to community_path(@post.community)
     end
   end
 
