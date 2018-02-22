@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'static#home'
-
+  get 'posts/recent', to: 'posts#recent'
+  
   resources :communities do
     resources :posts do
       member do

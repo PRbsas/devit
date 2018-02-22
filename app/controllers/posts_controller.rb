@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote]
+
   def new
     @post = Post.new
+  end
+  
+  def recent
+    @recent_posts = Post.recent
+    render :recent
   end
 
   def show

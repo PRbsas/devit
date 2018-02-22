@@ -1,0 +1,15 @@
+<h1>Recent Posts</h1>
+
+<section id="list-posts">
+  <ul>
+    <% @recent_posts.each do |post| %>
+        <li>
+          <h2><%= post.title %></h2>
+          <p>submitted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to "#{post.user.show_name}", user_path(post.user), class: "user-tag" %></p>
+          <% post.tags.each do |tag| %>
+            <h2 class="tags"><%= tag.name unless tag.name == nil %></h2>
+          <% end %>
+        </li>
+      <% end %>
+  </ul>
+</section>

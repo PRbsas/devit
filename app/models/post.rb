@@ -4,6 +4,8 @@ class Post < ApplicationRecord
 
   acts_as_votable
 
+  scope :recent, -> { order('posts.created_at DESC').limit(10) }
+
   belongs_to :user
   belongs_to :community
 

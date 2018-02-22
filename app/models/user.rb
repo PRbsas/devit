@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   acts_as_voter
 
+  scope :active, -> { order('users.sign_in_count DESC').limit(5) }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:github],
