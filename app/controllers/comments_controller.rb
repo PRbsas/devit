@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [ :show, :edit, :update, :destroy ]
 
   def create
     @comment = Comment.create(comment_params)
@@ -11,12 +11,27 @@ class CommentsController < ApplicationController
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { redirect_back(fallback_location: root_path) }
-        format.json { render json: @community.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    if current_user.id == @comment.user_id
+      @comment.destroy
+
+      respond_to do |format|
+        format.html { redirect_to community_post_path(@comment.post.community, @comment.post), notice: 'Comment was successfully deleted.' }
+        format.json { head :no_content }
       end
     end
   end
 
   private
+    def set_comment
+      @comment = Comment.find(params[:id])
+    end
+
     def comment_params
       params.require(:comment).permit(:content, :user_id, :post_id)
     end

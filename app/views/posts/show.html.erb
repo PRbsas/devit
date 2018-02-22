@@ -28,6 +28,9 @@
       <li>
         <h6><%= comment.content %></h6>
         <p>submitted <%= time_ago_in_words(comment.created_at) %> ago by <%= link_to "#{comment.user.show_name}", user_path(comment.user), class: "user-tag" %></p>
+        <% if  current_user.id == comment.user_id %>
+          <p id="comment-delete"><%= link_to 'Delete', comment, method: :delete %></p>
+        <% end %>
       </li>
     <% end %>
   </ul>
