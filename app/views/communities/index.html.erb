@@ -12,7 +12,11 @@
             <% if  community.poster.flairs.last != nil %>
               <%= link_to "#{community.poster.flairs.last.name}", user_path(community.poster), class: "user-tag" %>
             <% end %>
-            </p>      
+
+            <% if  community.poster.flairs.last != nil %>
+              <%= link_to "#{community.poster.user_flairs.first.experience_level}", user_path(community.poster), class: "user-tag" %>
+            <% end %>
+            </p>
         </li>
       <% end %>
     <% end %>
@@ -23,3 +27,4 @@
     <% end %>
   </ul>
 </section>
+user_flairs.first.experience_level
