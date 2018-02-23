@@ -2,6 +2,7 @@
 
 <% if  current_user.id == @community.user_id %>
   <p id="nav-button"><%= link_to 'Delete', @community, method: :delete %></p>
+  <p id="nav-button"><%= link_to 'Edit', edit_community_path(@community, @post) %></p>
 <% end %>
 
 <section id="list">

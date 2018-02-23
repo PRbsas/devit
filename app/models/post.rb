@@ -17,5 +17,5 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :title, uniqueness: true
   validates :link, presence: true
-  validates :content, length: { minimum: 100 }
+  validates :content, length: { minimum: 50 }
 end
