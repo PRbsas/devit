@@ -2,13 +2,4 @@
   <p id="nav-button"><%= link_to 'Edit', edit_user_path(@user) %></p>
 <% end %>
 
-<section id="profile">
-  <%= image_tag "#{@user.show_avatar}", class: "avatar" %>
-  <h1><%= @user.name %></h1>
-  <div>
-    <p><strong>username:</strong> <%= @user.username %></p>
-    <p><strong>email:</strong> <%= @user.email %></p>
-    <p><strong>bio:</strong> <%= @user.bio %></p>
-    <p><strong><%= link_to 'GitHub Profile', @user.github_profile_url, target: :_blank  %></strong></p>
-  </div>
-</section>
+<%= render partial: 'user', locals: { user: @user } %>

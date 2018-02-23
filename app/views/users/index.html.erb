@@ -1,18 +1,5 @@
 <% @users.each do |user| %>
-  <section id="profile">
-    <%= link_to user_path(user) do %>
-      <% if user.avatar_url %>
-        <%= image_tag "#{user.avatar_url}", class: "avatar" %>
-      <% else %>
-        <%= image_tag "https://github.com/identicons/#{SecureRandom.hex}.png", class: "avatar" %>
-      <% end %>
-        <h1><%= user.name unless !user.name %></h1>
-        <div>
-          <p>username: <%= user.username %></p>
-          <p>email: <%= user.email %></p>
-          <p>bio: <%= user.bio %></p>
-          <p><strong><%= link_to 'GitHub Profile', user.github_profile_url %></strong></p>
-        </div>
-    <% end %>
-  </section>
+  <%= link_to user_path(user) do %>
+    <%= render partial: 'user', locals: { user: user } %>
+  <% end %>
 <% end %>
