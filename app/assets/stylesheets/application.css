@@ -31,6 +31,14 @@ body {
   color: #111;
 }
 
+#devit {
+  padding-top: 15%;
+  max-width: 60%;
+  margin: auto;
+  text-align: justify;
+  font-weight: normal;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }

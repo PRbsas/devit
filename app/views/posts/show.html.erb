@@ -11,10 +11,10 @@
   <p class="description"><%= @post.content %></p>
 
   <%= link_to like_community_post_path(@post), method: :put do %>
-     <div class="engagement">
-       <%= image_tag("heart") %>
-       <p><%= @post.get_upvotes.size %> </p>
-     </div>
+   <div class="engagement">
+     <%= image_tag("heart") %>
+     <p><%= @post.get_upvotes.size %> </p>
+   </div>
   <% end %>
   <div class="engagement">
     <%= image_tag("message-square") %>
