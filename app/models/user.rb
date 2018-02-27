@@ -5,8 +5,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:github],
-         :authentication_keys => {email: false, login: true}
+         :omniauthable, :omniauth_providers => [:github]
 
   has_many :communities
 

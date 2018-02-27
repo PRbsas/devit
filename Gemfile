@@ -39,6 +39,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'capybara'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :development do
@@ -57,6 +59,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry', '~> 0.10.3'
+  gem 'rspec-rails', '~> 3.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
