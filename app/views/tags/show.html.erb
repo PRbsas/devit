@@ -1,0 +1,7 @@
+<section id="list-posts" class="recent">
+  <ul>
+    <%= link_to community_post_path(@post.community, @post) do %>
+      <%= render partial: 'posts/post', locals: { post: @post } %>
+    <% end %>
+  </ul>
+</section>
