@@ -7,7 +7,7 @@
       <li><%= link_to "#{current_user.show_name}", user_path(current_user) %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <li><%= link_to "Recent Posts", posts_recent_path %></li>
-      <li><%= link_to "Communities", communities_path %></li>
+      <li><%= link_to "Communities", communities_path, class: "list_communities" %></li>
       <li><%= link_to "Members", users_path %></li>
     <% else %>
       <li><%= link_to "Join devit", new_user_registration_path %></li>
