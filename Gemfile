@@ -38,6 +38,8 @@ gem 'acts_as_votable', '~> 0.11.1'
 
 gem 'jquery-rails'
 gem 'normalize-rails'
+
+gem 'active_model_serializers', '~> 0.10.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -3,6 +3,10 @@ class CommunitiesController < ApplicationController
 
   def index
     @communities = Community.by_created_at
+    respond_to do |format|
+      format.html { @communities }
+      format.json { render json: @communities }
+    end
   end
 
   def show
@@ -44,7 +48,7 @@ class CommunitiesController < ApplicationController
   def destroy
     if current_user.id == @community.user_id
       @community.destroy
-      
+
       respond_to do |format|
         format.html { redirect_to communities_url, notice: 'Community was successfully deleted.' }
         format.json { head :no_content }
