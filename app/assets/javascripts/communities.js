@@ -31,7 +31,7 @@ Community.prototype.formatIndex = function () {
   <section id="list">
     <ul>
       <li>
-        <a href="/communities/${this.id}"><h2>${this.title}</h2>
+        <a href="/communities/${this.id}"><h2>${this.title}</h2></a>
         <p class="description">${this.description}</p>
       </li>
     </ul>
