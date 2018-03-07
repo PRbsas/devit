@@ -10,6 +10,10 @@ class CommunitiesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html { @community }
+      format.json { render json: @community }
+    end
   end
 
   def new

@@ -1,4 +1,5 @@
 <p id="nav-button"><%= link_to 'Back', communities_path %></p>
+<p id="nav-button"><%= link_to 'Next', community_path(@community.id + 1), data: { id: @community.id }, class: "show_next" %></p>
 <p id="nav-button"><%= pluralize(@community.posts.size, 'post') %></p>
 
 <% if  current_user.id == @community.user_id %>
