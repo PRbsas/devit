@@ -6,8 +6,4 @@
     <p><strong>email:</strong> <%= user.email %></p>
     <p><strong>bio:</strong> <%= user.bio %></p>
     <p><strong><%= link_to 'GitHub Profile', user.github_profile_url, target: :_blank  %></strong></p>
-    <a id="get_activity" href="/users/<%= user.id %>">Show activity</a>
-  </div>
-  <div id="list_activity">
-  </div>
 </section>

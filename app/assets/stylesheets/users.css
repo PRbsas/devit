@@ -74,3 +74,19 @@ select#user_flairs_attributes_0_user_flairs_experience_level {
   width: 198px;
   display: inline;
 }
+
+.show {
+  font-weight: bold;
+  padding: 2px 5px 3px;
+  font-size: 22px;
+  padding: 4px 8px;
+  vertical-align: 6px;
+  border-radius: 5px;
+  min-width: 140px;
+  color: #fff;
+  background-color: #cc0000;
+}
+
+div .show {
+  margin-right: 0;
+}
