@@ -1,6 +1,6 @@
-window.onload = () => {
+document.addEventListener('turbolinks:load', () => {
   getuserActivityFeed()
-}
+})
 
 const getuserActivityFeed = () => {
   $('#get_activity').on('click', (e) => {
@@ -25,9 +25,11 @@ const getuserActivityFeed = () => {
           $('#list_activity').append(userPostHtml)
         })
 
-        // activity.comments.forEach((comment) => {
-        //  $('#list_activity').append(comment.content)
-        // })
+        activity.comments.forEach((comment) => {
+          let newUserComment = new UserComment(comment)
+          let userCommenttHtml = newUserComment.formatIndex()
+          $('#list_activity').append(userCommenttHtml)
+        })
       })
   })
 }
@@ -55,4 +57,15 @@ function UserPost (post) {
 UserPost.prototype.formatIndex = function () {
   let postHtml = `<a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>`
   return postHtml
+}
+
+function UserComment (comment) {
+  this.id = comment.id
+  this.content = comment.content
+  this.postId = comment.post_id
+}
+
+UserComment.prototype.formatIndex = function () {
+  let commentHtml = `<a href="/posts/${this.postId}"><p>${this.content}</p></a>`
+  return commentHtml
 }

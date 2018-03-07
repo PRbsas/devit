@@ -1,6 +1,6 @@
-window.onload = () => {
+document.addEventListener('turbolinks:load', () => {
   bindClickHandlers()
-}
+})
 
 const bindClickHandlers = () => {
   $('.list_communities').on('click', (e) => {
