@@ -1,7 +1,7 @@
 document.addEventListener('turbolinks:load', () => {
   getCommunitiesIndex()
   getCommunity()
-  // getNextCommunity()
+  getNextCommunity()
 })
 
 const getCommunitiesIndex = () => {
@@ -44,6 +44,30 @@ const getCommunity = () => {
   })
 }
 
+const getNextCommunity = () => {
+  $(document).on('click', '.next_community', function (e) {
+    e.preventDefault()
+    // history.pushState(null, null, 'communities')
+    let id = $(this).data('id')
+    console.log(id)
+    fetch(`/communities/${id}/next`, {credentials: 'same-origin'})
+      .then((res) => res.json())
+      .then(community => {
+        $('.wrapper').html('')
+
+        let newCommunity = new Community(community)
+        let communityHtml = newCommunity.formatShow()
+        $('.wrapper').append(communityHtml)
+
+        community.posts.forEach(post => {
+          let newPost = new Post(post)
+          let PostHtml = newPost.formatIndex()
+          $('.wrapper').append(PostHtml)
+        })
+      })
+  })
+}
+
 function Community (community) {
   this.id = community.id
   this.title = community.title
@@ -71,6 +95,7 @@ Community.prototype.formatShow = function () {
       <li>
         <h2>${this.title}</h2>
         <p class="description">${this.description}</p>
+        <p id="nav-button"><a class="next_community" data-id="${this.id}">Next</a></p>
       </li>
     </ul>
   </section>
