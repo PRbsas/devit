@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @community = Community.friendly.find(params[:community_id])
+    @community = Community.find(params[:community_id])
     @post = @community.posts.create(post_params)
     @post.user = current_user
 
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.friendly.find(params[:id])
+      @post = Post.find(params[:id])
     end
 
     def post_params

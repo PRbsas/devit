@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
+  def index
+    @post = Post.find(params[:post_id])
+    render json: @post.comments
+  end
+
   def create
     @comment = Comment.create(comment_params)
     @comment.user = current_user
