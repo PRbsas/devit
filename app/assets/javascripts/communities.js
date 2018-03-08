@@ -1,12 +1,13 @@
 document.addEventListener('turbolinks:load', () => {
   getCommunitiesIndex()
-  getNextCommunity()
+  getCommunity()
+  // getNextCommunity()
 })
 
 const getCommunitiesIndex = () => {
   $('.list_communities').on('click', (e) => {
     e.preventDefault()
-    history.pushState(null, null, 'communities')
+    //history.pushState(null, null, 'communities')
 
     fetch(`/communities.json`, {credentials: 'same-origin'})
       .then((res) => res.json())
@@ -21,17 +22,17 @@ const getCommunitiesIndex = () => {
   })
 }
 
-const getNextCommunity = () => {
-  $('.show_next').on('click', (e) => {
+const getCommunity = () => {
+  $(document).on('click', '.show_community', function (e) {
     e.preventDefault()
-    // history.pushState(null, null, 'communities')
-    let next = $('.show_next').data('id') + 1
-    fetch(`/communities/${next}.json`, {credentials: 'same-origin'})
+    let id = $(this).attr('data-id')
+    //history.pushState(null, null, `communities/${id}`)
+    fetch(`/communities/${id}.json`, {credentials: 'same-origin'})
       .then((res) => res.json())
       .then(community => {
         $('.wrapper').html('')
         let newCommunity = new Community(community)
-        let communityHtml = newCommunity.formatIndex()
+        let communityHtml = newCommunity.formatShow()
         $('.wrapper').append(communityHtml)
 
         community.posts.forEach(post => {
@@ -54,7 +55,21 @@ Community.prototype.formatIndex = function () {
   <section id="list">
     <ul>
       <li>
-        <a href="/communities/${this.id}"><h2>${this.title}</h2></a>
+      <a href="/communities/${this.id}" class="show_community" data-id="${this.id}"><h2>${this.title}</h2></a>
+      <p class="description">${this.description}</p>
+      </li>
+    </ul>
+  </section>
+  `
+  return communityHtml
+}
+
+Community.prototype.formatShow = function () {
+  let communityHtml = `
+  <section id="list">
+    <ul>
+      <li>
+        <h2>${this.title}</h2>
         <p class="description">${this.description}</p>
       </li>
     </ul>
