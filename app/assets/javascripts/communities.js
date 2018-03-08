@@ -7,7 +7,7 @@ document.addEventListener('turbolinks:load', () => {
 const getCommunitiesIndex = () => {
   $('.list_communities').on('click', (e) => {
     e.preventDefault()
-    //history.pushState(null, null, 'communities')
+    history.pushState(null, null, 'communities')
 
     fetch(`/communities.json`, {credentials: 'same-origin'})
       .then((res) => res.json())
@@ -26,7 +26,7 @@ const getCommunity = () => {
   $(document).on('click', '.show_community', function (e) {
     e.preventDefault()
     let id = $(this).attr('data-id')
-    //history.pushState(null, null, `communities/${id}`)
+    history.pushState(null, null, `communities/${id}`)
     fetch(`/communities/${id}.json`, {credentials: 'same-origin'})
       .then((res) => res.json())
       .then(community => {

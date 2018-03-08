@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  before_action :set_community, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_community, only: [ :show, :edit, :update, :destroy, :next ]
 
   def index
     @communities = Community.by_created_at
@@ -14,6 +14,11 @@ class CommunitiesController < ApplicationController
       format.html { @community }
       format.json { render json: @community }
     end
+  end
+
+  def next
+    @next_community = @community.next
+    render json: @next_community
   end
 
   def new

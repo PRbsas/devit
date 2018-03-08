@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
   resources :tags
   resources :users, only: [:index, :show, :edit, :update]
+  get 'communities/:id/next', to: 'communities#next'
 end

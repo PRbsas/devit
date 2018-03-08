@@ -14,4 +14,9 @@ class Community < ApplicationRecord
   def self.by_created_at
     order('created_at DESC')
   end
+
+  def next
+    next_community = self.class.where('id > ?', id).first
+	  next_community ? next_community : self.class.first
+  end
 end
