@@ -4,4 +4,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :communities
   has_many :posts
   has_many :comments
+  has_many :flairs, serializer: FlairSerializer
+  has_many :user_flairs
 end

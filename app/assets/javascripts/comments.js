@@ -20,13 +20,14 @@ const loadComments = () => {
     })
       .then((res) => res.json())
       .then(comment => {
-        console.log(comment)
 
         let newComment = new Comment(comment)
         let commentHtml = newComment.formatList()
         $('#list-posts').append(commentHtml)
+
         $('textarea#comment_content').val('')
         //$('input[type=submit]').removeAttr('disabled')
+        $('input[type=submit]').prop('disabled', true)
       })
   })
 }

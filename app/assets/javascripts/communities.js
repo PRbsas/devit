@@ -47,7 +47,6 @@ const getCommunity = () => {
         let posts = community.posts
         renderCommunityShow(community)
         renderPostIndex(posts)
-        console.log(posts)
       })
   })
 }

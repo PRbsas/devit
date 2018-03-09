@@ -12,6 +12,7 @@ const getuserActivityFeed = () => {
       .then(activity => {
         $('#list_activity').html('')
 
+        getFlairs(activity)
         getCommunities(activity)
         getPosts(activity)
         getComments(activity)
@@ -89,4 +90,20 @@ UserComment.prototype.formatIndex = function () {
     </li>
   `
   return commentHtml
+}
+
+const getFlairs = (activity) => {
+  activity.flairs.forEach((flair) => {
+    let newUserFlair = new UserFlair(flair)
+    $('#list_activity').append(newUserFlair.formatFlair())
+  })
+}
+
+function UserFlair (flair) {
+  this.name = flair.name
+}
+
+UserFlair.prototype.formatFlair = function () {
+  let userFlairtHtml = `<a class= "flairs">${this.name}</a>`
+  return userFlairtHtml
 }
