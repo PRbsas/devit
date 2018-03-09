@@ -3,4 +3,5 @@ class PostSerializer < ActiveModel::Serializer
 
   has_many :comments
   belongs_to :community
+  has_many :tags
 end

@@ -39,7 +39,7 @@ const getCommunity = () => {
   $(document).on('click', '.show_community', function (e) {
     e.preventDefault()
     let id = $(this).attr('data-id')
-    history.pushState(null, null, `communities/${id}`)
+    history.replaceState(null, null, `communities/${id}`)
     fetch(`/communities/${id}.json`, {credentials: 'same-origin'})
       .then((res) => res.json())
       .then(community => {
@@ -47,6 +47,7 @@ const getCommunity = () => {
         let posts = community.posts
         renderCommunityShow(community)
         renderPostIndex(posts)
+        console.log(posts)
       })
   })
 }
@@ -55,7 +56,7 @@ const getNextCommunity = () => {
   $(document).on('click', '.next_community', function (e) {
     e.preventDefault()
     let id = $(this).data('id')
-    history.pushState(null, null, `/${id}`)
+    history.replaceState(null, null, `/communities/${id}`)
     fetch(`/communities/${id}/next`, {credentials: 'same-origin'})
       .then((res) => res.json())
       .then(community => {
