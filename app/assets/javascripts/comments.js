@@ -26,7 +26,7 @@ const loadComments = () => {
         let commentHtml = newComment.formatList()
         $('#list-posts').append(commentHtml)
         $('textarea#comment_content').val('')
-        $('input[type=submit]').removeAttr('disabled')
+        //$('input[type=submit]').removeAttr('disabled')
       })
   })
 }
