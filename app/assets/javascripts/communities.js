@@ -74,6 +74,8 @@ function Community (community) {
   this.id = community.id
   this.title = community.title
   this.description = community.short_description
+  this.posterId = community.poster.id
+  this.poster = community.poster.username || community.poster.name || community.poster.email
 }
 
 Community.prototype.formatIndex = function () {
@@ -83,6 +85,7 @@ Community.prototype.formatIndex = function () {
       <li>
       <a href="/communities/${this.id}" class="show_community" data-id="${this.id}"><h2>${this.title}</h2></a>
       <p class="description">${this.description}</p>
+      <p class="time-ago">created by <a href="/users/${this.posterId}" class="user-tag">${this.poster}<a></p>
       </li>
     </ul>
   </section>
