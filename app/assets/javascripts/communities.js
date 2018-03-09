@@ -98,9 +98,9 @@ Community.prototype.formatShow = function () {
   <section id="list">
     <ul>
       <li>
+        <a class="next_community" data-id="${this.id}">Next</a>
         <h2>${this.title}</h2>
         <p class="description">${this.description}</p>
-        <p id="nav-button"><a class="next_community" data-id="${this.id}">Next</a></p>
       </li>
     </ul>
   </section>
