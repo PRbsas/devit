@@ -13,6 +13,7 @@ const getCommunitiesIndex = () => {
       .then((res) => res.json())
       .then(communities => {
         $('.wrapper').html('')
+        $('.wrapper').append(renderAddACommunityLink())
         renderCommunityIndex(communities)
       })
   })
@@ -23,6 +24,15 @@ const renderCommunityIndex = (communities) => {
     let newCommunity = new Community(community)
     $('.wrapper').append(newCommunity.formatIndex())
   })
+}
+
+const renderAddACommunityLink = () => {
+  let link = `
+    <section id="list">
+      <a href="/communities/new" class="create">ADD A COMMUNITY</a>
+    </section>
+  `
+  return link
 }
 
 const getCommunity = () => {
@@ -53,7 +63,6 @@ const getNextCommunity = () => {
         let posts = community.posts
         renderCommunityShow(community)
         renderPostIndex(posts)
-
       })
   })
 }
