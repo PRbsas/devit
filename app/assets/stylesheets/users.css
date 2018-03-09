@@ -90,3 +90,38 @@ select#user_flairs_attributes_0_user_flairs_experience_level {
 div .show {
   margin-right: 0;
 }
+
+#list_activity h2 {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+  display: block;
+  font-size: 20px;
+  text-align: justify;
+}
+
+#list_activity h4 {
+  display: flex;
+  float: left;
+  margin-top: 0;
+  text-align: justify;
+}
+
+#list_activity p {
+  margin-top: 0;
+  text-align: justify;
+}
+
+#list_activity ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#list_activity li {
+  list-style-type: none;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 0;
+}

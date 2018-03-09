@@ -51,9 +51,11 @@ function UserCommunity (community) {
 
 UserCommunity.prototype.formatIndex = function () {
   let communityHtml = `
-    <a href="/communities/${this.id}"><h2>${this.title}</h2></a>
-    <p class="description">${this.description}</p>
-    `
+    <li>
+      <a href="/communities/${this.id}"><h2>${this.title}</h2></a>
+      <p>${this.description}</p>
+    </li>
+  `
   return communityHtml
 }
 
@@ -66,8 +68,10 @@ function UserPost (post) {
 
 UserPost.prototype.formatIndex = function () {
   let postHtml = `
+  <li>
     <a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>
-    <a href="${this.link}">${this.link}</a>
+    <a href="${this.link}"><h4>${this.link}</h4></a>
+  </li>
   `
   return postHtml
 }
@@ -79,6 +83,10 @@ function UserComment (comment) {
 }
 
 UserComment.prototype.formatIndex = function () {
-  let commentHtml = `<a href="/posts/${this.postId}"><p>${this.content}</p></a>`
+  let commentHtml = `
+    <li>
+      <a href="/posts/${this.postId}">${this.content}</a>
+    </li>
+  `
   return commentHtml
 }
