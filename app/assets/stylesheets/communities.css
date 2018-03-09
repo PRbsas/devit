@@ -69,3 +69,19 @@ a.next_community {
   color: #23ff00;
   background-color: #000;
 }
+
+a.create {
+  margin-bottom: 40px;
+  display: flex;
+  float: right;
+  font-weight: bold;
+  padding: 2px 5px 3px;
+  font-size: 15px;
+  text-align: center;
+  padding: 4px 8px;
+  vertical-align: 6px;
+  border-radius: 5px;
+  background-color: #dbd3fd;
+  color: #0c0040;
+  margin-right: 15px;
+}

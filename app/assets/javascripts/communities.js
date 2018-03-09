@@ -99,6 +99,7 @@ Community.prototype.formatShow = function () {
     <ul>
       <li>
         <a class="next_community" data-id="${this.id}">Next</a>
+        <a href="/communities/${this.id}/posts/new" class="create"">WRITE A POST</a>
         <h2>${this.title}</h2>
         <p class="description">${this.description}</p>
         <p class="time-ago">created by <a href="/users/${this.posterId}" class="user-tag">${this.poster}<a></p>
