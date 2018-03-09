@@ -21,6 +21,22 @@ const loadComments = () => {
       .then((res) => res.json())
       .then(comment => {
         console.log(comment)
+
+        let newComment = new Comment(comment)
+        let commentHtml = newComment.formatList()
+        $('#list-posts').append(commentHtml)
+        $('textarea#comment_content').val('')
+        //$('input[type=submit]').removeAttr('disabled')
       })
   })
+}
+
+function Comment (comment) {
+  this.id = comment.id
+  this.content = comment.content
+}
+
+Comment.prototype.formatList = function () {
+  let commentHtml = `<h6>${this.content}</h6>`
+  return commentHtml
 }
