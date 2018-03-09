@@ -1,6 +1,6 @@
 class Community < ApplicationRecord
-  # extend FriendlyId
-  # friendly_id :title
+  extend FriendlyId
+  friendly_id :title
 
   belongs_to :poster, class_name: 'User', foreign_key: 'user_id'
 

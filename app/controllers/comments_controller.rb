@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
   def index
-    @post = Post.find(params[:post_id])
+    @post = Post.friendly.find(params[:post_id])
     render json: @post.comments
   end
 
