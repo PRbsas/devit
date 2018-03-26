@@ -40,6 +40,6 @@
   <%= form_for [@post, Comment.new] do |f| %>
     <%= f.text_area :content, placeholder: 'Comment here...' %><br>
     <%= f.hidden_field :post_id, value: @post.id %>
-    <%= f.submit "add" %>
+    <%= f.submit "add", data: { disable: true } %>
   <% end %>
 </section>
