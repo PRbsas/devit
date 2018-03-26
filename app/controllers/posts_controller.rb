@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    render json: @post
+    # render json: @post
   end
 
   def create

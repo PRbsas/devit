@@ -27,7 +27,7 @@ const loadComments = () => {
 
         $('textarea#comment_content').val('')
         //$('input[type=submit]').removeAttr('disabled')
-        $('input[type=submit]').prop('disabled', true)
+        //$('input[type=submit]').prop('disabled', true)
       })
   })
 }
