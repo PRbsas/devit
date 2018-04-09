@@ -119,21 +119,42 @@ Community.prototype.formatShow = function () {
   return communityHtml
 }
 
-function Post (post) {
-  this.id = post.id
-  this.title = post.title
-  this.communityId = post.community_id
-}
+// function Post (post) {
+//   this.id = post.id
+//   this.title = post.title
+//   this.communityId = post.community_id
+// }
 
-Post.prototype.formatIndex = function () {
-  let postHtml = `
-  <section id="list-posts">
-    <ul>
-      <li>
-        <a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>
-      </li>
-    </ul>
-   </section>
-  `
-  return postHtml
+// Post.prototype.formatIndex = function () {
+//   let postHtml = `
+//   <section id="list-posts">
+//     <ul>
+//       <li>
+//         <a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>
+//       </li>
+//     </ul>
+//    </section>
+//   `
+//   return postHtml
+// }
+
+class Post {
+  constructor (post) {
+    this.id = post.id
+    this.title = post.title
+    this.communityId = post.community_id
+  }
+
+  formatIndex () {
+    let postHtml = `
+    <section id="list-posts">
+      <ul>
+        <li>
+          <a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>
+        </li>
+      </ul>
+     </section>
+    `
+    return postHtml
+  }
 }
