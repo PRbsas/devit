@@ -1,8 +1,8 @@
 document.addEventListener('turbolinks:load', () => {
-  getuserActivityFeed()
+  getUserActivityFeed()
 })
 
-const getuserActivityFeed = () => {
+const getUserActivityFeed = () => {
   $('#get_activity').on('click', (e) => {
     e.preventDefault()
 
@@ -44,54 +44,6 @@ const getComments = (activity) => {
   })
 }
 
-function UserCommunity (community) {
-  this.id = community.id
-  this.title = community.title
-  this.description = community.short_description
-}
-
-UserCommunity.prototype.formatIndex = function () {
-  let communityHtml = `
-    <li>
-      <a href="/communities/${this.id}"><h2>${this.title}</h2></a>
-      <p>${this.description}</p>
-    </li>
-  `
-  return communityHtml
-}
-
-function UserPost (post) {
-  this.id = post.id
-  this.title = post.title
-  this.link = post.link
-  this.communityId = post.community_id
-}
-
-UserPost.prototype.formatIndex = function () {
-  let postHtml = `
-  <li>
-    <a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>
-    <a href="${this.link}"><h4>${this.link}</h4></a>
-  </li>
-  `
-  return postHtml
-}
-
-function UserComment (comment) {
-  this.id = comment.id
-  this.content = comment.content
-  this.postId = comment.post_id
-}
-
-UserComment.prototype.formatIndex = function () {
-  let commentHtml = `
-    <li>
-      <a href="/posts/${this.postId}">${this.content}</a>
-    </li>
-  `
-  return commentHtml
-}
-
 const getFlairs = (activity) => {
   activity.flairs.forEach((flair) => {
     let newUserFlair = new UserFlair(flair)
@@ -99,11 +51,67 @@ const getFlairs = (activity) => {
   })
 }
 
-function UserFlair (flair) {
-  this.name = flair.name
+class UserCommunity {
+  constructor (community) {
+    this.id = community.id
+    this.title = community.title
+    this.description = community.short_description
+  }
+
+  formatIndex () {
+    let communityHtml = `
+    <li>
+      <a href="/communities/${this.id}"><h2>${this.title}</h2></a>
+      <p>${this.description}</p>
+    </li>
+    `
+    return communityHtml
+  }
 }
 
-UserFlair.prototype.formatFlair = function () {
-  let userFlairtHtml = `<a class= "flairs">${this.name}</a>`
-  return userFlairtHtml
+class UserPost {
+  constructor (post) {
+    this.id = post.id
+    this.title = post.title
+    this.link = post.link
+    this.communityId = post.community_id
+  }
+
+  formatIndex () {
+    let postHtml = `
+    <li>
+      <a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>
+      <a href="${this.link}"><h4>${this.link}</h4></a>
+    </li>
+    `
+    return postHtml
+  }
+}
+
+class UserComment {
+  constructor (comment) {
+    this.id = comment.id
+    this.content = comment.content
+    this.postId = comment.post_id
+  }
+
+  formatIndex () {
+    let commentHtml = `
+    <li>
+      <a href="/posts/${this.postId}">${this.content}</a>
+    </li>
+    `
+    return commentHtml
+  }
+}
+
+class UserFlair {
+  constructor (flair) {
+    this.name = flair.name
+  }
+
+  formatFlair () {
+    let userFlairtHtml = `<a class= "flairs">${this.name}</a>`
+    return userFlairtHtml
+  }
 }
