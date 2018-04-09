@@ -3,7 +3,7 @@ document.addEventListener('turbolinks:load', () => {
 })
 
 const loadComments = () => {
-  $(document).on('submit', 'form#new_comment', function (e) {
+  $(document).unbind().on('submit', 'form#new_comment', function (e) {
     e.preventDefault()
 
     let url = $(this).attr('action')
@@ -20,24 +20,26 @@ const loadComments = () => {
     })
       .then((res) => res.json())
       .then(comment => {
-
         let newComment = new Comment(comment)
         let commentHtml = newComment.formatList()
         $('#list-posts').append(commentHtml)
 
         $('textarea#comment_content').val('')
+        $('form').hide()
         //$('input[type=submit]').removeAttr('disabled')
         //$('input[type=submit]').prop('disabled', true)
       })
   })
 }
 
-function Comment (comment) {
-  this.id = comment.id
-  this.content = comment.content
-}
+class Comment {
+  constructor (comment) {
+    this.id = comment.id
+    this.content = comment.content
+  }
 
-Comment.prototype.formatList = function () {
-  let commentHtml = `<h6>${this.content}</h6>`
-  return commentHtml
+  formatList () {
+    let commentHtml = `<h6>${this.content}</h6>`
+    return commentHtml
+  }
 }
