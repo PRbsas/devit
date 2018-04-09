@@ -79,64 +79,47 @@ const renderPostIndex = (posts) => {
   })
 }
 
-function Community (community) {
-  this.id = community.id
-  this.title = community.title
-  this.description = community.short_description
-  this.posterId = community.poster.id
-  this.poster = community.poster.username || community.poster.name || community.poster.email
-}
+class Community {
+  constructor (community) {
+    this.id = community.id
+    this.title = community.title
+    this.description = community.short_description
+    this.posterId = community.poster.id
+    this.poster = community.poster.username || community.poster.name || community.poster.email
+  }
 
-Community.prototype.formatIndex = function () {
-  let communityHtml = `
-  <section id="list">
-    <ul>
-      <li>
-      <a href="/communities/${this.id}" class="show_community" data-id="${this.id}"><h2>${this.title}</h2></a>
-      <p class="description">${this.description}</p>
-      <p class="time-ago">created by <a href="/users/${this.posterId}" class="user-tag">${this.poster}<a></p>
-      </li>
-    </ul>
-  </section>
-  `
-  return communityHtml
-}
-
-Community.prototype.formatShow = function () {
-  let communityHtml = `
-  <section id="list">
-    <ul>
-      <li>
-        <a class="next_community" data-id="${this.id}">Next</a>
-        <a href="/communities/${this.id}/posts/new" class="create"">WRITE A POST</a>
-        <h2>${this.title}</h2>
+  formatIndex () {
+    let communityHtml = `
+    <section id="list">
+      <ul>
+        <li>
+        <a href="/communities/${this.id}" class="show_community" data-id="${this.id}"><h2>${this.title}</h2></a>
         <p class="description">${this.description}</p>
         <p class="time-ago">created by <a href="/users/${this.posterId}" class="user-tag">${this.poster}<a></p>
-      </li>
-    </ul>
-  </section>
-  `
-  return communityHtml
+        </li>
+      </ul>
+    </section>
+      `
+    return communityHtml
+  }
+
+  formatShow () {
+    let communityHtml = `
+    <section id="list">
+      <ul>
+        <li>
+          <a class="next_community" data-id="${this.id}">Next</a>
+          <a href="/communities/${this.id}/posts/new" class="create"">WRITE A POST</a>
+          <h2>${this.title}</h2>
+          <p class="description">${this.description}</p>
+          <p class="time-ago">created by <a href="/users/${this.posterId}" class="user-tag">${this.poster}<a></p>
+        </li>
+      </ul>
+    </section>
+    `
+    return communityHtml
+  }
 }
-
-// function Post (post) {
-//   this.id = post.id
-//   this.title = post.title
-//   this.communityId = post.community_id
-// }
-
-// Post.prototype.formatIndex = function () {
-//   let postHtml = `
-//   <section id="list-posts">
-//     <ul>
-//       <li>
-//         <a href="/communities/${this.communityId}/posts/${this.id}"><h2>${this.title}</h2></a>
-//       </li>
-//     </ul>
-//    </section>
-//   `
-//   return postHtml
-// }
 
 class Post {
   constructor (post) {
