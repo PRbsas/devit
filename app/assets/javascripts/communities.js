@@ -20,7 +20,10 @@ const getCommunitiesIndex = () => {
 }
 
 const renderCommunityIndex = (communities) => {
-  communities.forEach((community) => {
+  const sortedCommunities = communities.sort((a, b) => {
+    return a.title.localeCompare(b.title)
+  })
+  sortedCommunities.forEach((community) => {
     let newCommunity = new Community(community)
     $('.wrapper').append(newCommunity.formatIndex())
   })
@@ -109,7 +112,7 @@ class Community {
       <ul>
         <li>
           <a class="next_community" data-id="${this.id}">Next</a>
-          <a href="/communities/${this.id}/posts/new" class="create"">WRITE A POST</a>
+          <a href="/communities/${this.id}/posts/new" class="create">WRITE A POST</a>
           <h2>${this.title}</h2>
           <p class="description">${this.description}</p>
           <p class="time-ago">created by <a href="/users/${this.posterId}" class="user-tag">${this.poster}<a></p>

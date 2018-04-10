@@ -13,6 +13,7 @@ const getUserActivityFeed = () => {
         $('#list_activity').html('')
 
         getFlairs(activity)
+        getUserExperience(activity)
         getCommunities(activity)
         getPosts(activity)
         getComments(activity)
@@ -48,6 +49,13 @@ const getFlairs = (activity) => {
   activity.flairs.forEach((flair) => {
     let newUserFlair = new UserFlair(flair)
     $('#list_activity').append(newUserFlair.formatFlair())
+  })
+}
+
+const getUserExperience = (activity) => {
+  activity.user_flairs.forEach((experience) => {
+    let newUserExperience = new UserExperience(experience)
+    $('#list_activity').append(newUserExperience.formatExperienceLevel())
   })
 }
 
@@ -111,7 +119,18 @@ class UserFlair {
   }
 
   formatFlair () {
-    let userFlairtHtml = `<a class= "flairs">${this.name}</a>`
-    return userFlairtHtml
+    let userFlairHtml = `<a class= "flairs">${this.name}</a>`
+    return userFlairHtml
+  }
+}
+
+class UserExperience {
+  constructor (experience) {
+    this.level = experience.experience_level
+  }
+
+  formatExperienceLevel () {
+    let UserExperienceHtml = `<a class= "flairs">${this.level}</a>`
+    return UserExperienceHtml
   }
 }
