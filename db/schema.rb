@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180222043557) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.integer "post_id"
@@ -99,7 +102,7 @@ ActiveRecord::Schema.define(version: 20180222043557) do
     t.index ["uid"], name: "index_users_on_uid"
   end
 
-  create_table "votes", force: :cascade do |t|
+  create_table "votes", id: :serial, force: :cascade do |t|
     t.string "votable_type"
     t.integer "votable_id"
     t.string "voter_type"
